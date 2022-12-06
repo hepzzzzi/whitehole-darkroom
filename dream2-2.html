@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      <title>꿈 상영회</title>
+      <meta charset="utf-8"> 
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400&display=swap" rel="stylesheet">
+      
+      <style>
+        *{font-family: 'Noto Serif KR', serif;}
+        body{background-image:url('./img/sisterBg.png'); 
+             background-position: center;   
+             background-repeat: no-repeat;
+        }
+
+        .csMsg1 { border-radius: 0px 20px 0px 20px; margin: 5px; color:white; background-color: #2EB966;}
+        .csMsg2 {border:dotted 3px;  margin: 5px blue; color:blue;background:pink;}
+
+    
+        #animate {
+            position : absolute;
+            z-index  : 10;
+            top      : 100px;
+            left     : 30px;
+            width    : 100px;
+            height   : 100px;
+            animation: move 5s ease infinite;
+        }
+               
+        #animate2 {
+            position : absolute;
+            z-index  : 10;
+            top      : 100px;
+            right    : 450px;
+            width    : 100px;
+            height   : 100px;
+            animation: move 10s ease infinite;
+        }
+         
+         #animate3 {
+            position : absolute;
+            z-index  : 10;
+            top      : 100px;
+            right    : 450px;
+            width    : 100px;
+            height   : 100px;
+            animation: move 2s ease infinite;
+         }
+
+         #animate4 {
+            position : absolute;
+            z-index  : 10;
+            top      : 6500px;
+            left     : 120px;
+            width    : 500px;
+            height   : 100px;
+            animation: move 5s ease infinite;
+         }
+
+         #animate5 { 
+            position : absolute;
+            z-index  : 10;
+            top      : 4500px;
+            left     : 50px;
+            -webkit-animation:move 8s ease infinite;
+            -moz-animation:move 4s ease infinite;
+            animation: move 10s ease infinite;
+         }
+            
+         #animate6 {
+            position : absolute;
+            z-index  : 10;
+            top      : 3500px;
+            left     : 470px;
+            width    : 100px;
+            height   : 100px;
+            animation: move 2s ease infinite;
+         }
+
+         @keyframes move { 50% {transform: translate(100px, 100px);}}
+         @-webkit-keyframes move { 50% {-webkit-transform: translate(800px, 0px);}}
+         @-moz-keyframes move { 50% {transform: translate(800px, 0px);}}
+         
+
+        .esteregg::selection {
+            background: black;
+            color: #fff;
+         }
+         
+         .scrollText{
+            margin-top: 1000px;
+            color:blueviolet;
+            z-index: 30;
+            text-align:center;
+            opacity: 0;
+            transition: all 2.5s;  /* n초에 걸쳐서 투명도 0*/ 
+         }
+      </style>
+ 
+      <style>
+        .stage {
+            height: calc(100vh + 800px); ;
+            display: flex;
+            justify-content: right;
+            padding-right:200px;
+            align-items: flex-end;    
+        }
+
+        .door {
+            position: relative;
+            width: 100px;
+            height: 150px;            
+        }
+         
+        .door-back{
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+         /* 
+         이동 애니메이션을 위해 미리 이동시켜놓기
+         translate3D를 활용하면 GPU를 특별히 사용한다고 한다
+         %를 지정하면 각 수치에 따라 알아서 움직이기때문에 편리하다.
+         */
+        .door:nth-child(2) .dog{
+            background-image: url("./img/dog2.png");
+        }
+
+        .door-body{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: 1s;
+            transform-origin: 0%;
+        }
+
+        .door:nth-child(2) .door-body {
+            background: #f2f2f2;
+        }
+        .door:hover .door-body{
+            transform: perspective(800px) rotateY(-120deg);  
+        }
+      </style>
+
+   </head> 
+
+   
+   <body style="width:100%; height:7000px" onload="myScr()">
+      
+      <div class="scrollText" style="margin-left :50%;"><h3>그런데 이거 꿈인가?</h3></div>
+      <div class="scrollText" style="margin-left :20%;">뭔가 익숙해</div>
+      <div class="scrollText" style="margin-right:59%;"><h3>아 맞다 그거 해야하는데</h3></div>
+      <div class="scrollText" style="margin-left :30%;">어디로 향하는 거지?</div>
+      <div class="scrollText" style="margin-right:60%;"><h2>잊은건 없나?</h2></div>
+      <div class="scrollText" style="margin-right:30%;">데자뷔인가</div>
+
+
+      <div  id="animate" ><img src="./img/umb-01.png"  alt=""></div>
+      <div  id="animate2"><img src="./img/gosari2.png" alt=""></div>
+      <span id="animate3">Ppiyong!</span>
+      <div  id="animate4"><img src="./img/umb-01.png"  alt=""></div>
+      <div  id="animate5"><img src="./img/buds.png"    alt=""></div>
+      <span id="animate6">Ppiyong!</span>
+
+
+
+      <!-- 문 위치 -->
+        <div class="stage">
+             <div class="door">
+                <div class="door-body"></div>
+            </div>
+            <div class  = "door" 
+                 onclick = "window.location='./darkroom.html'"><!-- 암실 이동하는 URL -->
+                <div class="door-back">
+                    <div class="dog"></div>
+                </div>         
+                <div class="door-body"></div>
+            </div>      
+        </div>
+
+      <!-- 자바스크립트 소스  -->
+      <SCRIPT language="javascript">
+ 
+         // 자동스크롤
+         // =======================================================================
+         myY = 0; //초기 포커싱위치를 0으로 설정해주도록한다
+         function myScr() {
+            window.scroll(0,myY); //스크롤바의 위치 설정
+            myY = myY + 2.5; //y의 값을 점점 내리도록한다(속도))
+            timer = setTimeout("myScr()", 5) ; //0.001초마다 이 함수를 반복하도록설정
+            if(myY ==7000) {   //만약 y축의 값이 300이 되면 초기화를 하도록설정
+               clearTimeout(timer);
+               // myY = 0;
+            } 
+         }
+ 
+         //페이드 인 텍스트 
+         // =======================================================================
+         let observer = new IntersectionObserver((e)=>{
+            e.forEach((박스)=>{
+               if(박스.isIntersecting){
+               박스.target.style.opacity = 1;
+               }
+            })
+         })
+
+         let divs = document.querySelectorAll('div.scrollText')
+         observer.observe(divs[0])<!--div n번째-->
+         observer.observe(divs[1]) 
+         observer.observe(divs[2]) 
+         observer.observe(divs[3]) 
+         observer.observe(divs[4]) 
+         observer.observe(divs[5]) 
+         observer.observe(divs[6]) 
+
+      </SCRIPT> 
+
+   </body>
+</html>

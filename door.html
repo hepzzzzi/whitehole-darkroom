@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           body
+        .stage{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;    
+        }
+
+
+        .door {
+            position: relative;
+            width: 100px;
+            height: 150px;            
+        }
+        
+        .door-back{
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+            /* 
+            이동 애니메이션을 위해 미리 이동시켜놓기
+            translate3D를 활용하면 GPU를 특별히 사용한다고 한다
+            %를 지정하면 각 수치에 따라 알아서 움직이기때문에 편리하다.
+             */
+
+        }
+        .door:nth-child(2) .dog{
+            background-image: url("images/dog2.png");
+        }
+
+        .door-body{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: 1s;
+            transform-origin: 0%;
+        }
+        .door:nth-child(2) .door-body{
+            background: #f2f2f2;
+
+        
+        }
+        .door:hover .door-body{
+            transform: perspective(800px) rotateY(-120deg);
+  
+        }
+
+     </style>
+</head>
+<body>
+
+    <div class="stage">
+        <div class="door">
+       
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="dog"></div>
+            </div>         
+            <div class="door-body"></div>
+        </div>
+      
+    </div>
+    
+</body>
+</html>

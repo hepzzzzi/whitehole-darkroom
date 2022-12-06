@@ -1,0 +1,202 @@
+
+<!doctype html>
+<html lang="ko" style="background-color: black;">
+  <head>
+    <meta charset="utf-8">
+    <title>암실</title>
+    <style>
+      * {
+        font-family: Consolas, monospace;
+        font-size: 16px;
+      }
+      .jb-text {
+        color: #ffffff;
+        position: absolute;
+        display: none;
+        transform: translate(40%, 500%);
+        font-size: 12px;
+      }
+      .dark_img {
+        position: absolute;
+      }
+      .dark_img:hover + .jb-text {
+        display: block;
+      }
+      .dark_img:hover {
+        filter: brightness(0.5);
+      }
+
+button {
+          cursor: pointer;
+        }
+        .modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .modal .bg {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .modalBox {
+        position: absolute;
+        background-image: url(./15.png);
+        width: 400px;
+        height: 200px;
+        padding: 20px;
+        font-size: 11px;
+        text-align: center;
+        line-height: 20px;
+        color: white;
+        background-size: 250px;
+        }
+
+        .modalBox button {
+            display: block;
+            margin: 0 auto;
+            margin-top: 25px;
+            font-size: 11px;
+            background-color: transparent;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .openBtn {
+          font-size: 20px;
+          border: none;
+        background-color: black;
+          text-align: left;
+          margin-top: 15px;
+        }
+
+        .closeBtn {
+          border: none;
+          background-color: black;
+          color: white;
+        }
+
+
+
+
+.marquee {
+  padding:0.5em 0;
+  overflow:hidden;
+  margin-bottom:10px;
+  position:relative;
+}
+.marquee p:hover {
+-moz-animation-play-state: paused;
+-webkit-animation-play-state: paused;
+animation-play-state: paused;
+}
+
+.marquee p:after {
+  content:"";
+  white-space:nowrap;
+  padding-right:50px;
+}
+
+.marquee p {
+  margin:0;
+  padding-left:100%;
+  display:inline-block;
+  white-space:nowrap;
+    -webkit-animation-name:marquee;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-duration:25s;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-name:marquee;
+    -moz-animation-timing-function:linear;
+    -moz-animation-duration:25s;
+    -moz-animation-iteration-count:infinite;
+    -ms-animation-name:marquee;
+    -ms-animation-timing-function:linear;
+    -ms-animation-duration:25s;
+    -ms-animation-iteration-count:infinite;
+    -o-animation-name:marquee;
+    -o-animation-timing-function:linear;
+    -o-animation-duration:25s;
+    -o-animation-iteration-count:infinite;
+    animation-name:marquee;
+    animation-timing-function:linear;
+    animation-duration:25s;
+    animation-iteration-count:infinite;
+}
+@-webkit-keyframes marquee {
+  from   { -webkit-transform: translate(0%);}
+  99%,to { -webkit-transform: translate(-100%);}
+}
+@-moz-keyframes marquee {
+  from   { -moz-transform: translate(0%);}
+  99%,to { -moz-transform: translate(-100%);}
+}
+@-ms-keyframes marquee {
+  from   { -ms-transform: translate(0%);}
+  99%,to { -ms-transform: translate(-100%);}
+}
+@-o-keyframes marquee {
+  from   { -o-transform: translate(0%);}
+  99%,to { -o-transform: translate(-100%);}
+}
+@keyframes marquee {
+  from   { transform: translate(0%);}
+  99%,to { transform: translate(-100%);}
+}
+
+
+
+    </style>
+  </head>
+  <body>
+        <div class="marquee">
+        <p style="color: #495057;">왜 그랬지 지금와서 드는 생각인데 아 후회된다 안되는 줄 알면서 왜 그랬을까 그러지 말걸 까맣게 잊은 줄만 알았어 한 번 더 참을 걸 그런짓은 하지 말았어야 했어 지난날처럼 되돌아 올 순 없겠지 좀 더 생각할 걸 왜 그런 말을 했지 시간을 되돌리고 싶다 미안해</p>
+    </div>
+    <div class="daimg" style="
+    display: flex;
+    height: 600px;
+    align-items: flex-end;
+    justify-content: left;">
+                    <button class="openBtn">
+            <img class="dark_img" src="img/1.png" style="width: 150px;">
+            <div class="jb-text">눈 보고 인사하기</div>
+        </button>
+    </div>
+<div class="modal hidden">
+  <div class="bg"></div>
+  <div class="modalBox">
+    <p style="margin-top: 40px; font-size: 12px;">닫힌 방문 뒤의 언니<br>
+        <br>
+한창 바쁜 시기엔 인사하는 것을 까먹는 경우가 다반사인데, <br>인사하지 않으면 일주일 동안 얼굴을 마주하지 못한다.
+</p>
+    <button class="closeBtn">닫기</button>
+    </div>
+</div>
+
+
+<script>
+  const open = () => {
+    document.querySelector(".modal").classList.remove("hidden");
+  }
+
+  const close = () => {
+    document.querySelector(".modal").classList.add("hidden");
+  }
+  document.querySelector(".openBtn").addEventListener("click", open);
+  document.querySelector(".closeBtn").addEventListener("click", close);
+  document.querySelector(".bg").addEventListener("click", close);
+</script>
+
+
+
+  </body>
+</html>

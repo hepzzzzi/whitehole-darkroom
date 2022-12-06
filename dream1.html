@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      <title>꿈 상영회</title>
+      <meta charset="utf-8"> 
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400&display=swap" rel="stylesheet">
+      
+      <style>
+         *{font-family: 'Noto Serif KR', serif;}
+         .csMsg1 { border-radius: 0px 20px 0px 20px; margin: 5px; color:white; background-color: #2EB966;}
+         .csMsg2 {border:dotted 3px;  margin: 5px blue; color:blue;background:pink;}
+
+      #animate {
+          position : absolute;
+          z-index  : 10;
+          top      : 100px;
+          left     : 30px;
+          width    : 100px;
+          height   : 100px;
+          animation: move 5s ease infinite;
+      }
+            
+      #animate2 {
+         position : absolute;
+         z-index  : 10;
+         top      : 100px;
+         right    : 450px;
+         width    : 100px;
+         height   : 100px;
+         animation: move 10s ease infinite;
+      }
+         
+      #animate3 {
+         position : absolute;
+         z-index  : 10;
+         top      : 100px;
+         right    : 450px;
+         width    : 100px;
+         height   : 100px;
+         animation: move 2s ease infinite;
+      }
+
+      #animate4 {
+         position : absolute;
+         z-index  : 10;
+         top      : 500px;
+         left     : 100px;
+         width    : 100px;
+         height   : 100px;
+         animation: move 2s ease infinite;
+      }
+
+      .context {
+         position : absolute;
+         top      : -180px;
+         left     : 50%;
+         z-index  : 20;
+         transform: translate(-50%, 00%);   /* 좌측으로 절반 이동 */
+      }
+
+      .esteregg::selection {
+          background: black;
+          color: #fff;
+      }
+            
+        @keyframes move { 50% {transform: translate(100px, 100px);} }
+      
+      </style>
+   </head> 
+
+   <body>
+      
+      <div class="context"
+          style="text-align: center; margin-top:430px; line-height: 35px;">
+         마법학교에 들어간다.<BR>
+         <span id="idMsg21" class="csMsg2"></span>은(는) 비행 연습을 하고 있고, 나도 비행연습을 하기위해 비행용 빗자루를 찾아다닌다.<BR>
+         그때 <span id="idMsg22"class="csMsg2"></span>은(는) <span id="idMsg11" class="csMsg1"></span>을(를) 타고 날아다니고 있다.<BR>
+         나의 비행도구도 <span id="idMsg12" class="csMsg1"></span>이다.<BR>
+
+         <span class="esteregg" style="color:rgb(243, 243, 243);">그런데, 고사리에 분무하는 걸 한동안 잊었더니 가장 예쁜 줄기가 갈색으로 타버린 적이 있다. 
+            <a onclick="nextPage1()" class="esteregg" style="color:rgb(255, 255, 255); text-decoration: none;">(들어가기)</a>
+         </span><BR>
+
+         뭔가 이상하다 싶으면서도 승차감이 너무 좋고 효율적이어서 요즘엔 이게 핫 아이템이구나, 하고 열심히 비행연습을 한다.<BR>
+         그때 <span id="idMsg23" class="csMsg2"></span>은(는) 나에게 갑자기 마법 전쟁에 나가란 말을 한다.<BR>
+         사실 난 아직 비행을 잘 하지 못하는데… 어떻게 해야 하는지 물어봄과 동시에 이미 나는 전쟁에 출전해 있고<BR>
+         날지는 못하지만,부지런해지기 마법은 할 줄 알아서 점프하고 마법 쏘고 점프하고 마법을 쏜다. <BR>
+
+        <div  style=" margin-top:100px; text-align:center;">
+          <a href="index.html" style="position: absolute;"> 
+            <strong>
+               [!!]
+            </strong>
+          </a>
+        </div>
+      </div>
+
+      <div  id="animate" ><img src="./img/gosari.png"  alt=""></div>
+      <div  id="animate2"><img src="./img/gosari2.png" alt=""></div>
+      <span id="animate3">Ppiyong!</span>
+     
+
+      <form name="formName" action="dream1.html">
+         <input type="hidden" name="msg1"  id="idMsg1" vlaue="">
+         <input type="hidden" name="msg2"  id="idMsg2" vlaue="">
+         <input type="hidden" name="msg3"  id="idMsg3" vlaue="">
+         <input type="hidden" name="msg4"  id="idMsg4" vlaue="">
+         <input type="hidden" name="msg5"  id="idMsg5" vlaue="">
+         <input type="hidden" name="msg6"  id="idMsg6" vlaue="">
+         <input type="hidden" name="msg7"  id="idMsg7" vlaue="">
+         <input type="hidden" name="msg8"  id="idMsg8" vlaue="">
+         <input type="hidden" name="msg9"  id="idMsg9" vlaue="">
+         <input type="hidden" name="msg10" id="idMsg10" vlaue="">
+         <input type="hidden" name="msg11" id="idMsg11" vlaue="">
+         <input type="hidden" name="msg12" id="idMsg12" vlaue="">
+     </form>
+     
+     <SCRIPT language="javascript">
+         function nextPage1() {
+            document.formName.action="dream1-1.html";
+            document.formName.submit();
+         }
+
+        const url = new URL(this.location);
+     
+        // URLSearchParams 객체
+        const urlParams = url.searchParams;
+     
+        // URLSearchParams.get()
+        var msg1   = urlParams.get('msg1')  ;   var idMsg1  = document.getElementById("idMsg1");   idMsg1.value  = msg1;
+        var msg2   = urlParams.get('msg2')  ;   var idMsg2  = document.getElementById("idMsg2");   idMsg2.value  = msg2;
+        var msg3   = urlParams.get('msg3')  ;   var idMsg3  = document.getElementById("idMsg3");   idMsg3.value  = msg3;
+        var msg4   = urlParams.get('msg4')  ;   var idMsg4  = document.getElementById("idMsg4");   idMsg4.value  = msg4;
+        var msg5   = urlParams.get('msg5')  ;   var idMsg5  = document.getElementById("idMsg5");   idMsg5.value  = msg5;
+        var msg6   = urlParams.get('msg6')  ;   var idMsg6  = document.getElementById("idMsg6");   idMsg6.value  = msg6;
+        var msg7   = urlParams.get('msg7')  ;   var idMsg7  = document.getElementById("idMsg7");   idMsg7.value  = msg7;
+        var msg8   = urlParams.get('msg8')  ;   var idMsg8  = document.getElementById("idMsg8");   idMsg8.value  = msg8;
+        var msg9   = urlParams.get('msg9')  ;   var idMsg9  = document.getElementById("idMsg9");   idMsg9.value  = msg9;
+        var msg10  = urlParams.get('msg10') ;   var idMsg10 = document.getElementById("idMsg10");  idMsg10.value = msg10;
+        var msg11  = urlParams.get('msg11') ;   var idMsg11 = document.getElementById("idMsg11");  idMsg11.value = msg11;
+        var msg12  = urlParams.get('msg12') ;   var idMsg12 = document.getElementById("idMsg12");  idMsg12.value = msg12;    
+
+        document.getElementById("idMsg11").innerHTML = msg1;
+        document.getElementById("idMsg12").innerHTML = msg1;
+
+        document.getElementById("idMsg21").innerHTML = msg2;        
+        document.getElementById("idMsg22").innerHTML = msg2;    
+        document.getElementById("idMsg23").innerHTML = msg2;    
+      
+     </SCRIPT> 
+     <footer style="margin-top:1000px ;">
+      <hr>
+      <div style="text-align: center;">
+         <b style="font-size: large;">      
+            CREDIT<br><br>
+         </b>   
+         <b >제공/배급</b> 김헵시바, 박하<br>
+         <b>특별 출연/스폰서</b> to do list 
+      </div>
+     </footer>
+   </body>
+</html>
